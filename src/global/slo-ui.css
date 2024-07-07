@@ -1,3 +1,5 @@
+@import 'normalize.css';
+
 :root {
   --accent: #F9D936;
   --neutral-0: #f7f7f7;
@@ -49,8 +51,12 @@
   --h5: 1.266rem;
   --h6: 0.8rem;
   --small: 0.7rem;
-}
 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Cantarell, sans-serif;
+
+  font-weight: 400;
+
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -66,63 +72,20 @@
     --content-hover: var(--primary-200);
     --content-active: var(--primary-300);
     --content-focused: var(--neutral-950);
-    --content-disabled: var(--neutral-300);
+    --content-disabled: var(--neutral-400);
     --content-inverse: var(--primary-950);
     --content-light: var(--primary-300);
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  line-height: 90%;
-  letter-spacing: -1.5px;
-  margin: 0;
+html {
+  background-color: var(--base);
 }
 
-h1 {
-  font-size: var(--h1)
-}
-
-h2 {
-  font-size: var(--h2)
-}
-
-h3 {
-  font-size: var(--h3)
-}
-
-h4 {
-  font-size: var(--h4)
-}
-
-h5 {
-  font-size: var(--h5)
-}
-
-h6 {
-  font-family: monospace;
-  font-weight: 100;
-  letter-spacing: 1px;
-  font-size: var(--h6);
-}
-
-small {
-  font-family: monospace;
-  font-size: var(--small);
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  max-width: 1320px;
-  margin: auto;
+@media (max-width: 1024px) {
+  html {
+    font-size: 150%;
+  }
 }
 
 a {
@@ -148,4 +111,35 @@ a:focus {
 a:active {
   background-color: var(--base-active);
   color: var(--content-active);
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 600;
+  border-radius: 0.1rem;
+}
+
+.nav-link:hover {
+  background-color: var(--base-hover);
+}
+
+.nav-link:visited {
+  color: var(--content);
+}
+
+.nav-link:focus {
+  background-color: var(--base-focused);
+  color: var(--content-focused);
+}
+
+.nav-link.selected:visited:focus {
+  background-color: var(--base-focused);
+  color: var(--content-focused);
+}
+
+.nav-link.selected {
+  background-color: var(--base-inverse);
+  color: var(--content-inverse);
 }

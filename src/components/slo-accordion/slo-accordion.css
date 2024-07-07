@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.accordion {
+  /* border: 1px solid var(--neutral-200); */
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--base);
+}

@@ -5,16 +5,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Stencil Component Starter</title>
-  <link rel="stylesheet" href="/src/global/normalize.css">
+  <link rel="stylesheet" href="/build/slo-ui.css" />
   <script type="module" src="/build/slo-ui.esm.js"></script>
   <script nomodule src="/build/slo-ui.js"></script>
 </head>
 
 <body>
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <basic-card href="https://example.com" language="English" latestVersion="1.0" date="2023-05-12" title="Example Card"
-    description="This is an example description.">
-  </basic-card>
+  <nav>
+    <a href="/page1" class="nav-link" aria-label="Go to Page 1">Page 1</a>
+    <a href="/page2" class="nav-link" aria-label="Go to Page 2">Page 2</a>
+    <a href="/page3" class="nav-link" aria-label="Go to Page 3">Page 3</a>
+    <a href="/page4" class="nav-link" aria-label="Go to Page 4">Page 4</a>
+  </nav>
+  <basic-card type="Example Type" card_title="Example Title" description="This is an example description."
+    href="https://www.example.com" disabled="false"></basic-card>
+  <basic-card type="Example Type" card_title="Example Title" description="This is an example description." href="#"
+    disabled="true"></basic-card>
+  <slo-accordion>
+    <slo-accordion-item heading="Title 1">
+      <p>
+        The accordion component delivers large amounts of content in a small space through progressive
+        disclosure.
+        The user gets key details about the underlying content and can choose to expand that content
+        within the
+        constraints of the accordion.
+        Accordions work especially well on mobile interfaces or whenever vertical space is at a premium.
+      </p>
+    </slo-accordion-item>
+    <slo-accordion-item heading="Title 2">
+      <p>
+        The accordion component delivers large amounts of content in a small space through progressive
+        disclosure.
+        The user gets key details about the underlying content and can choose to expand that content
+        within the
+        constraints of the accordion.
+        Accordions work especially well on mobile interfaces or whenever vertical space is at a premium.
+      </p>
+    </slo-accordion-item>
+    <slo-accordion-item heading="Title Disabled" disabled="true">
+      <p>
+        The accordion component delivers large amounts of content in a small space through progressive
+        disclosure.
+        The user gets key details about the underlying content and can choose to expand that content
+        within the
+        constraints of the accordion.
+        Accordions work especially well on mobile interfaces or whenever vertical space is at a premium.
+      </p>
+    </slo-accordion-item>
+  </slo-accordion>
+
 
 </body>
 

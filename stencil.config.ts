@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'slo-ui',
+  globalStyle: 'src/global/slo-ui.css',
   outputTargets: [
     {
       type: 'dist',
@@ -23,5 +24,4 @@ export const config: Config = {
   testing: {
     browserHeadless: "new",
   },
-  globalStyle: 'src/global/global.css',
 };

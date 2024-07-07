@@ -6,56 +6,74 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface BasicCard {
+        "card_title": string;
+        "description": string;
+        "disabled": boolean;
+        "href": string;
+        "summary": string;
+        "type": string;
+    }
+    interface SloAccordion {
+    }
+    interface SloAccordionItem {
+        "disabled": boolean;
+        "heading": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLBasicCardElement extends Components.BasicCard, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLBasicCardElement: {
+        prototype: HTMLBasicCardElement;
+        new (): HTMLBasicCardElement;
+    };
+    interface HTMLSloAccordionElement extends Components.SloAccordion, HTMLStencilElement {
+    }
+    var HTMLSloAccordionElement: {
+        prototype: HTMLSloAccordionElement;
+        new (): HTMLSloAccordionElement;
+    };
+    interface HTMLSloAccordionItemElement extends Components.SloAccordionItem, HTMLStencilElement {
+    }
+    var HTMLSloAccordionItemElement: {
+        prototype: HTMLSloAccordionItemElement;
+        new (): HTMLSloAccordionItemElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "basic-card": HTMLBasicCardElement;
+        "slo-accordion": HTMLSloAccordionElement;
+        "slo-accordion-item": HTMLSloAccordionItemElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface BasicCard {
+        "card_title"?: string;
+        "description"?: string;
+        "disabled"?: boolean;
+        "href"?: string;
+        "summary"?: string;
+        "type"?: string;
+    }
+    interface SloAccordion {
+    }
+    interface SloAccordionItem {
+        "disabled"?: boolean;
+        "heading"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "basic-card": BasicCard;
+        "slo-accordion": SloAccordion;
+        "slo-accordion-item": SloAccordionItem;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "basic-card": LocalJSX.BasicCard & JSXBase.HTMLAttributes<HTMLBasicCardElement>;
+            "slo-accordion": LocalJSX.SloAccordion & JSXBase.HTMLAttributes<HTMLSloAccordionElement>;
+            "slo-accordion-item": LocalJSX.SloAccordionItem & JSXBase.HTMLAttributes<HTMLSloAccordionItemElement>;
         }
     }
 }
