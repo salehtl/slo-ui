@@ -7,7 +7,7 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class BasicCard {
   @Prop() type: string;
-  @Prop() card_title: string;
+  @Prop() heading: string;
   @Prop() description: string;
   @Prop() summary: string;
   @Prop() href: string;
@@ -30,7 +30,7 @@ export class BasicCard {
         aria-disabled={this.getAriaDisabled()}
       >
         <small>{this.type}</small>
-        <p class="card-heading">{this.card_title}</p>
+        <p class="card-heading">{this.heading}</p>
         <p>{this.description || this.summary}</p>
       </a>
     );

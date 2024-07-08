@@ -17,9 +17,9 @@
     <a href="/page3" class="nav-link" aria-label="Go to Page 3">Page 3</a>
     <a href="/page4" class="nav-link" aria-label="Go to Page 4">Page 4</a>
   </nav>
-  <basic-card type="Example Type" card_title="Example Title" description="This is an example description."
+  <basic-card type="Example Type" heading="Example Title" description="This is an example description."
     href="https://www.example.com" disabled="false"></basic-card>
-  <basic-card type="Example Type" card_title="Example Title" description="This is an example description." href="#"
+  <basic-card type="Example Type" heading="Example Title" description="This is an example description." href="#"
     disabled="true"></basic-card>
   <slo-accordion>
     <slo-accordion-item heading="Title 1">
@@ -54,7 +54,42 @@
     </slo-accordion-item>
   </slo-accordion>
 
+  <div class="component-container">
+    <slo-chip size="md">Gray</slo-chip>
+    <slo-chip size="lg">Blue</slo-chip>
+    <slo-chip size="xl">Red</slo-chip>
+    <slo-chip size="sm" dismissible="true">Green</slo-chip>
+    <slo-chip size="sm" dismissible="true">Yellow</slo-chip>
+  </div>
+  <script>
+    document.addEventListener('slo-chip--click', (event) => {
+      console.log('Chip clicked:', event.detail.value);
+    });
 
+    document.addEventListener('slo-chip--dismiss', (event) => {
+      console.log('Chip dismissed:', event.detail.value);
+    });
+  </script>
+  <slo-chip color="red" size="sm" dismissible="true" value="Important" selected>
+    Important
+  </slo-chip>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // Get the chip component
+      const chipComponent = document.querySelector('slo-chip');
+
+      // Define the dismissal handler
+      function handleDismiss(event) {
+        console.log('Chip dismissed:', event.detail.value);
+        // Remove the chip from the DOM
+        chipComponent.remove();
+      }
+
+      // Attach the dismissal handler
+      chipComponent.addEventListener('slo-chip--dismiss', handleDismiss);
+    });
+  </script>
 </body>
 
 </html>
