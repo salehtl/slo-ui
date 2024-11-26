@@ -6,163 +6,109 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface BasicCard {
-        "description": string;
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
+    interface SloButton {
+        /**
+          * Specifies whether the button should be outlined or filled.
+         */
+        "appearance": 'outline' | 'filled';
+        /**
+          * Disables the button, preventing interaction.
+         */
         "disabled": boolean;
-        "heading": string;
-        "href": string;
-        "summary": string;
-        "type": string;
-    }
-    interface SloAccordion {
-    }
-    interface SloAccordionItem {
-        "disabled": boolean;
-        "heading": string;
-    }
-    /**
-     * @name Chip
-     * @description Use chips to label, categorize, or organize items using keywords that describe them.
-     * @category Data Display
-     * @tag controls
-     * @example <slo-chip dismissible="true">Important</slo-chip>
-     */
-    interface SloChip {
         /**
-          * If true, the chip will have a close icon.
+          * Controls the loading state of the button
          */
-        "dismissible": boolean;
+        "loading": boolean;
         /**
-          * If true, the chip will be selected.
+          * Specifies the type of the button (e.g., 'submit', 'button', 'reset').
          */
-        "selected": boolean;
+        "type": 'button' | 'submit' | 'reset';
         /**
-          * Chip value.
+          * Specifies the variant/style of the button (e.g., 'primary', 'secondary').
          */
-        "value": string;
+        "variant": 'primary' | 'secondary';
     }
-}
-export interface SloChipCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLSloChipElement;
 }
 declare global {
-    interface HTMLBasicCardElement extends Components.BasicCard, HTMLStencilElement {
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
-    var HTMLBasicCardElement: {
-        prototype: HTMLBasicCardElement;
-        new (): HTMLBasicCardElement;
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
     };
-    interface HTMLSloAccordionElement extends Components.SloAccordion, HTMLStencilElement {
+    interface HTMLSloButtonElement extends Components.SloButton, HTMLStencilElement {
     }
-    var HTMLSloAccordionElement: {
-        prototype: HTMLSloAccordionElement;
-        new (): HTMLSloAccordionElement;
-    };
-    interface HTMLSloAccordionItemElement extends Components.SloAccordionItem, HTMLStencilElement {
-    }
-    var HTMLSloAccordionItemElement: {
-        prototype: HTMLSloAccordionItemElement;
-        new (): HTMLSloAccordionItemElement;
-    };
-    interface HTMLSloChipElementEventMap {
-        "slo-chip--click": any;
-        "slo-chip--dismiss": any;
-    }
-    /**
-     * @name Chip
-     * @description Use chips to label, categorize, or organize items using keywords that describe them.
-     * @category Data Display
-     * @tag controls
-     * @example <slo-chip dismissible="true">Important</slo-chip>
-     */
-    interface HTMLSloChipElement extends Components.SloChip, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLSloChipElementEventMap>(type: K, listener: (this: HTMLSloChipElement, ev: SloChipCustomEvent<HTMLSloChipElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLSloChipElementEventMap>(type: K, listener: (this: HTMLSloChipElement, ev: SloChipCustomEvent<HTMLSloChipElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLSloChipElement: {
-        prototype: HTMLSloChipElement;
-        new (): HTMLSloChipElement;
+    var HTMLSloButtonElement: {
+        prototype: HTMLSloButtonElement;
+        new (): HTMLSloButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "basic-card": HTMLBasicCardElement;
-        "slo-accordion": HTMLSloAccordionElement;
-        "slo-accordion-item": HTMLSloAccordionItemElement;
-        "slo-chip": HTMLSloChipElement;
+        "my-component": HTMLMyComponentElement;
+        "slo-button": HTMLSloButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface BasicCard {
-        "description"?: string;
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
+    interface SloButton {
+        /**
+          * Specifies whether the button should be outlined or filled.
+         */
+        "appearance"?: 'outline' | 'filled';
+        /**
+          * Disables the button, preventing interaction.
+         */
         "disabled"?: boolean;
-        "heading"?: string;
-        "href"?: string;
-        "summary"?: string;
-        "type"?: string;
-    }
-    interface SloAccordion {
-    }
-    interface SloAccordionItem {
-        "disabled"?: boolean;
-        "heading"?: string;
-    }
-    /**
-     * @name Chip
-     * @description Use chips to label, categorize, or organize items using keywords that describe them.
-     * @category Data Display
-     * @tag controls
-     * @example <slo-chip dismissible="true">Important</slo-chip>
-     */
-    interface SloChip {
         /**
-          * If true, the chip will have a close icon.
+          * Controls the loading state of the button
          */
-        "dismissible"?: boolean;
+        "loading"?: boolean;
         /**
-          * Emitted when the chip is clicked.
+          * Specifies the type of the button (e.g., 'submit', 'button', 'reset').
          */
-        "onSlo-chip--click"?: (event: SloChipCustomEvent<any>) => void;
+        "type"?: 'button' | 'submit' | 'reset';
         /**
-          * Emitted when the close icon is clicked.
+          * Specifies the variant/style of the button (e.g., 'primary', 'secondary').
          */
-        "onSlo-chip--dismiss"?: (event: SloChipCustomEvent<any>) => void;
-        /**
-          * If true, the chip will be selected.
-         */
-        "selected"?: boolean;
-        /**
-          * Chip value.
-         */
-        "value"?: string;
+        "variant"?: 'primary' | 'secondary';
     }
     interface IntrinsicElements {
-        "basic-card": BasicCard;
-        "slo-accordion": SloAccordion;
-        "slo-accordion-item": SloAccordionItem;
-        "slo-chip": SloChip;
+        "my-component": MyComponent;
+        "slo-button": SloButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "basic-card": LocalJSX.BasicCard & JSXBase.HTMLAttributes<HTMLBasicCardElement>;
-            "slo-accordion": LocalJSX.SloAccordion & JSXBase.HTMLAttributes<HTMLSloAccordionElement>;
-            "slo-accordion-item": LocalJSX.SloAccordionItem & JSXBase.HTMLAttributes<HTMLSloAccordionItemElement>;
-            /**
-             * @name Chip
-             * @description Use chips to label, categorize, or organize items using keywords that describe them.
-             * @category Data Display
-             * @tag controls
-             * @example <slo-chip dismissible="true">Important</slo-chip>
-             */
-            "slo-chip": LocalJSX.SloChip & JSXBase.HTMLAttributes<HTMLSloChipElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "slo-button": LocalJSX.SloButton & JSXBase.HTMLAttributes<HTMLSloButtonElement>;
         }
     }
 }
