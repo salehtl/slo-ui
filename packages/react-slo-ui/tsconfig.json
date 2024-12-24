@@ -1,0 +1,34 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+      "module": "esnext",
+      "moduleResolution": "bundler",
+      "outDir": "./dist",
+      "target": "ES2020", 
+      "useDefineForClassFields": true,
+      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "skipLibCheck": true,
+      "jsx": "react",
+      "allowSyntheticDefaultImports": true,
+      "declarationDir": "./dist/types"
+    },
+    "include": ["lib"],
+    "exclude": ["node_modules"],
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/types/index.d.ts",
+    "scripts": {
+      "test": "node ./__tests__/react-slo-ui.test",
+      "build": "npm run tsc",
+      "tsc": "tsc -p . --outDir ./dist"
+    },
+    "files": [
+      "dist"
+    ],
+    "publishConfig": {
+      "access": "public"
+    },
+    "dependencies": {
+      "stencil-slo-ui": "*"
+    }
+  }
