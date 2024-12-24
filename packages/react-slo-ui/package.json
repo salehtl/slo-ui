@@ -1,6 +1,6 @@
 {
   "name": "@slo-ui/react-slo-ui",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "A component library built with Stencil",
   "keywords": [
     "react",
@@ -28,6 +28,6 @@
     "url": "https://github.com/salehtl/slo-ui/issues"
   },
   "dependencies": {
-    "@slo-ui/stencil-slo-ui": "*"
+    "@slo-ui/stencil-slo-ui": "^0.0.1-alpha.0"
   }
 }
